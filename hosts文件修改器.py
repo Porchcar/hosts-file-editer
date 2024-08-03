@@ -344,7 +344,7 @@ if not isadmin():
         about = Menu(menubar,tearoff=False)
         about.add_command(label="设置",command=setting)
         about.add_command(label="关于",command=aboutme)
-        about.add_command(label="退出",command=exit)
+        about.add_command(label="退出",command=sys.exit)
         menubar.add_cascade(label="帮助",menu=about)
         root.config(menu=menubar)
         '''
@@ -394,7 +394,7 @@ else:
     filemenu.add_command(label="备份",command=backupp)
     filemenu.add_command(label="恢复",command=recovery)
     controlmenu = Menu(menubar,tearoff=0)
-    controlmenu.add_command(label="撤销",command=undo)
+    controlmenu.add_command(label="撤销/重做",command=undo)
     controlmenu.add_command(label="手动一键备份",command=auto_backup)
     controlmenu.add_checkbutton(label="操作前自动备份",onvalue=1,offvalue=0,variable=open_autobackup)
     menubar.add_cascade(label="文件", menu=filemenu)
